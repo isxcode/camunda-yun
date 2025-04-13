@@ -1,0 +1,20 @@
+dependencies {
+
+    api(project(':camunda-yun-backend:camunda-yun-modules'))
+    api(project(':camunda-yun-vip:camunda-yun-backend'))
+
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+    implementation "com.alibaba:druid-spring-boot-starter:${DRUID_VERSION}"
+
+    implementation "org.flywaydb:flyway-core:${FLYWAY_VERSION}"
+    implementation "org.flywaydb:flyway-mysql:${FLYWAY_VERSION}"
+}
+
+bootJar {
+    archiveFileName = 'zhiqingyun.jar'
+}
+
+bootRun {
+    workingDir(rootDir.getAbsolutePath())
+}
