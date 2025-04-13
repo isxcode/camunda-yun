@@ -1,0 +1,5 @@
+dependencies {
+
+    api(project(':camunda-yun-backend:camunda-yun-common'))
+}
+

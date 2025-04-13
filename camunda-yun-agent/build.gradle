@@ -1,0 +1,21 @@
+dependencies {
+
+    api(project(':camunda-yun-backend:camunda-yun-api'))
+    api(project(':camunda-yun-backend:camunda-yun-common'))
+
+    implementation "org.apache.spark:spark-core_${SPARK_SCALA_VERSION}:${SPARK_VERSION}"
+
+    implementation "org.apache.spark:spark-yarn_${SPARK_SCALA_VERSION}:${SPARK_VERSION}"
+
+    implementation "org.apache.spark:spark-launcher_${SPARK_SCALA_VERSION}:${SPARK_VERSION}"
+
+    implementation "org.apache.hadoop:hadoop-yarn-client:${HADOOP_VERSION}"
+
+    implementation "org.jsoup:jsoup:${JSOUP_VERSION}"
+
+    implementation "org.apache.httpcomponents.client5:httpclient5:${HTTPCLIENT_VERSION}"
+}
+
+bootJar {
+    archiveFileName = 'zhiqingyun-agent.jar'
+}
