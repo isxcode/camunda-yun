@@ -193,8 +193,8 @@ public class BashExecutor extends WorkExecutor {
                 // 运行结束
 
                 // 获取日志
-                String getLogCommand = "cat " + clusterNode.getAgentHomePath() + "/zhishuyun-agent/works/"
-                    + workInstance.getId() + ".log";
+                String getLogCommand =
+                    "cat " + clusterNode.getAgentHomePath() + "/zhishuyun-agent/works/" + workInstance.getId() + ".log";
                 String logCommand = "";
                 try {
                     logCommand = executeCommand(scpFileEngineNodeDto, getLogCommand, false);

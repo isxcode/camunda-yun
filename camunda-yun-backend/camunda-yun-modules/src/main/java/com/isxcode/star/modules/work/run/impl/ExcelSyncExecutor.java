@@ -296,8 +296,8 @@ public class ExcelSyncExecutor extends WorkExecutor {
                 engineNode.getAgentHomePath() + "/zhishuyun-agent/file/" + csvFileName);
             // 删除本地的csv文件
             FileUtil.del(csvFilePath);
-            pluginReq.setCsvFilePath(engineNode.getAgentHomePath() + File.separator + "zhishuyun-agent"
-                + File.separator + "file" + File.separator + csvFileName);
+            pluginReq.setCsvFilePath(engineNode.getAgentHomePath() + File.separator + "zhishuyun-agent" + File.separator
+                + "file" + File.separator + csvFileName);
             pluginReq.setCsvFileName(csvFileName);
         } catch (JSchException | SftpException | InterruptedException | IOException ex) {
             FileUtil.del(csvFilePath);
