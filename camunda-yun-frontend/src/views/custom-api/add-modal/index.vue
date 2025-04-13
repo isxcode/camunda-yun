@@ -52,7 +52,7 @@
                 <!-- <div class="item-title">请求配置</div> -->
                 <el-form-item label="请求头模式">
                     <el-tooltip
-                        content="任何人访问：无权限拦截。系统认证：通过至轻云用户权限拦截。自定义：用户自定义请求头拦截"
+                        content="任何人访问：无权限拦截。系统认证：通过至数云用户权限拦截。自定义：用户自定义请求头拦截"
                         placement="top"
                     >
                         <el-icon style="left: 68px" class="tooltip-msg"><QuestionFilled /></el-icon>

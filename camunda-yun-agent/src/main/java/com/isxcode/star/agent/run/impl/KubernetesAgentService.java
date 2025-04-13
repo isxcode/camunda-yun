@@ -95,14 +95,14 @@ public class KubernetesAgentService implements AgentService {
             sparkLauncher.setConf("spark.kubernetes.driver.volumes.hostPath.jar.options.path", sparkJarPath);
             sparkLauncher.setConf("spark.kubernetes.executor.volumes.hostPath.jar.options.path", sparkJarPath);
         } else if (WorkType.PY_SPARK.equals(submitWorkReq.getWorkType())) {
-            sparkLauncher.setAppName("zhiqingyun-" + submitWorkReq.getWorkType() + "-" + submitWorkReq.getWorkId() + "-"
+            sparkLauncher.setAppName("zhishuyun-" + submitWorkReq.getWorkType() + "-" + submitWorkReq.getWorkId() + "-"
                 + submitWorkReq.getWorkInstanceId());
             String sparkJarPath = submitWorkReq.getAgentHomePath() + File.separator + "works" + File.separator
                 + submitWorkReq.getWorkInstanceId() + ".py";
             sparkLauncher.setConf("spark.kubernetes.driver.volumes.hostPath.jar.options.path", sparkJarPath);
             sparkLauncher.setConf("spark.kubernetes.executor.volumes.hostPath.jar.options.path", sparkJarPath);
         } else {
-            String appName = "zhiqingyun-" + submitWorkReq.getWorkType() + "-" + submitWorkReq.getWorkId() + "-"
+            String appName = "zhishuyun-" + submitWorkReq.getWorkType() + "-" + submitWorkReq.getWorkId() + "-"
                 + submitWorkReq.getWorkInstanceId();
             sparkLauncher.setAppName(appName);
             String sparkJarPath = submitWorkReq.getAgentHomePath() + File.separator + "plugins" + File.separator
@@ -111,13 +111,13 @@ public class KubernetesAgentService implements AgentService {
             sparkLauncher.setConf("spark.kubernetes.executor.volumes.hostPath.jar.options.path", sparkJarPath);
         }
 
-        // 引入至轻云的jar
+        // 引入至数云的jar
         if (!Strings.isEmpty(submitWorkReq.getAgentHomePath())) {
             File[] jarFiles = new File(submitWorkReq.getAgentHomePath() + File.separator + "lib").listFiles();
             if (jarFiles != null) {
                 for (int i = 0; i < jarFiles.length; i++) {
                     if (jarFiles[i].getName().contains("hive")
-                        || jarFiles[i].getName().contains("zhiqingyun-agent.jar")) {
+                        || jarFiles[i].getName().contains("zhishuyun-agent.jar")) {
                         continue;
                     }
                     sparkLauncher.addJar("local:///opt/spark/examples/jars/lib/" + jarFiles[i].getName());
@@ -251,7 +251,7 @@ public class KubernetesAgentService implements AgentService {
             sparkLauncher.setConf("spark.executorEnv.HADOOP_USER_NAME", hiveUsername);
         }
 
-        // 删除至轻云的自定义参数
+        // 删除至数云的自定义参数
         pluginSparkConfig.remove("qing.host1.name");
         pluginSparkConfig.remove("qing.host1.value");
         pluginSparkConfig.remove("qing.host2.name");
@@ -314,7 +314,7 @@ public class KubernetesAgentService implements AgentService {
     @Override
     public String getWorkStatus(String podName, String sparkHomePath) throws Exception {
 
-        String getStatusCmdFormat = "kubectl get pod %s -n zhiqingyun-space";
+        String getStatusCmdFormat = "kubectl get pod %s -n zhishuyun-space";
 
         Process process = Runtime.getRuntime().exec(String.format(getStatusCmdFormat, podName));
         InputStream inputStream = process.getInputStream();
@@ -358,7 +358,7 @@ public class KubernetesAgentService implements AgentService {
     @Override
     public String getStderrLog(String appId, String sparkHomePath) throws Exception {
 
-        String getLogCmdFormat = "kubectl logs %s -n zhiqingyun-space";
+        String getLogCmdFormat = "kubectl logs %s -n zhishuyun-space";
 
         Process process = Runtime.getRuntime().exec(String.format(getLogCmdFormat, appId));
         InputStream inputStream = process.getInputStream();
@@ -403,7 +403,7 @@ public class KubernetesAgentService implements AgentService {
     @Override
     public String getStdoutLog(String appId, String sparkHomePath) throws Exception {
 
-        String getLogCmdFormat = "kubectl logs %s -n zhiqingyun-space";
+        String getLogCmdFormat = "kubectl logs %s -n zhishuyun-space";
 
         Process process = Runtime.getRuntime().exec(String.format(getLogCmdFormat, appId));
         InputStream inputStream = process.getInputStream();
@@ -438,7 +438,7 @@ public class KubernetesAgentService implements AgentService {
     @Override
     public String getWorkDataStr(String appId, String sparkHomePath) throws Exception {
 
-        String getLogCmdFormat = "kubectl logs -f %s -n zhiqingyun-space";
+        String getLogCmdFormat = "kubectl logs -f %s -n zhishuyun-space";
 
         Process process = Runtime.getRuntime().exec(String.format(getLogCmdFormat, appId));
         InputStream inputStream = process.getInputStream();
@@ -473,7 +473,7 @@ public class KubernetesAgentService implements AgentService {
     @Override
     public void stopWork(String appId, String sparkHomePath, String agentHomePath) throws Exception {
 
-        String killAppCmdFormat = "kubectl delete pod %s -n zhiqingyun-space";
+        String killAppCmdFormat = "kubectl delete pod %s -n zhishuyun-space";
         Process process = Runtime.getRuntime().exec(String.format(killAppCmdFormat, appId));
 
         InputStream inputStream = process.getInputStream();

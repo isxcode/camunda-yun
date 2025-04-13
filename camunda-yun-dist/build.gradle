@@ -17,13 +17,13 @@ tasks.register('build_agent_lib', Copy) {
     }
     dependencies.each { dependency ->
         from dependency
-        into 'build/zhiqingyun_agent/lib'
+        into 'build/zhishuyun_agent/lib'
     }
 
     from rootDir.getAbsolutePath() + '/camunda-yun-backend/camunda-yun-api/build/libs'
     from rootDir.getAbsolutePath() + '/camunda-yun-agent/build/libs'
     from rootDir.getAbsolutePath() + '/resources/jdbc/system'
-    into 'build/zhiqingyun-agent/lib'
+    into 'build/zhishuyun-agent/lib'
 }
 
 // 构建plugins文件夹
@@ -40,10 +40,10 @@ tasks.register('build_agent_plugins', Copy) {
     from rootDir.getAbsolutePath() + '/camunda-yun-plugins/camunda-excel-sync-jdbc-plugin/build/libs'
     from rootDir.getAbsolutePath() + '/camunda-yun-vip/camunda-yun-plugins/camunda-container-sql-plugin/build/libs'
     from rootDir.getAbsolutePath() + '/camunda-yun-vip/camunda-yun-plugins/camunda-real-sync-plugin/build/libs'
-    into 'build/zhiqingyun-agent/plugins'
+    into 'build/zhishuyun-agent/plugins'
 }
 
-// 构建至轻云代理
+// 构建至数云代理
 tasks.register('build_agent', Tar) {
 
     mustRunAfter(":camunda-yun-frontend:make")
@@ -52,66 +52,66 @@ tasks.register('build_agent', Tar) {
     dependsOn('build_agent_plugins')
 
     compression = Compression.GZIP
-    archiveFileName = 'zhiqingyun-agent.tar.gz'
+    archiveFileName = 'zhishuyun-agent.tar.gz'
 
-    from('zhiqingyun-agent/bin') {
-        into 'zhiqingyun-agent/bin'
+    from('zhishuyun-agent/bin') {
+        into 'zhishuyun-agent/bin'
     }
     from(rootDir.getAbsolutePath() + "/camunda-yun-agent/src/main/resources/application.yml") {
-        into 'zhiqingyun-agent/conf'
+        into 'zhishuyun-agent/conf'
     }
-    from('zhiqingyun-agent/logs') {
-        into 'zhiqingyun-agent/logs'
+    from('zhishuyun-agent/logs') {
+        into 'zhishuyun-agent/logs'
     }
-    from('build/zhiqingyun-agent/plugins') {
-        into 'zhiqingyun-agent/plugins'
+    from('build/zhishuyun-agent/plugins') {
+        into 'zhishuyun-agent/plugins'
     }
-    from('zhiqingyun-agent/works') {
-        into 'zhiqingyun-agent/works'
+    from('zhishuyun-agent/works') {
+        into 'zhishuyun-agent/works'
     }
-    from('zhiqingyun-agent/file') {
-        into 'zhiqingyun-agent/file'
+    from('zhishuyun-agent/file') {
+        into 'zhishuyun-agent/file'
     }
-    from('build/zhiqingyun-agent/lib') {
-        into 'zhiqingyun-agent/lib'
+    from('build/zhishuyun-agent/lib') {
+        into 'zhishuyun-agent/lib'
     }
     from('../README.md') {
-        into 'zhiqingyun-agent/'
+        into 'zhishuyun-agent/'
     }
 }
 
-// 构建至轻云
-tasks.register('build_zhiqingyun', Tar) {
+// 构建至数云
+tasks.register('build_zhishuyun', Tar) {
 
     mustRunAfter(":camunda-yun-backend:make")
 
     compression = Compression.GZIP
-    archiveFileName = 'zhiqingyun.tar.gz'
+    archiveFileName = 'zhishuyun.tar.gz'
 
-    from('zhiqingyun/bin') {
-        into 'zhiqingyun/bin'
+    from('zhishuyun/bin') {
+        into 'zhishuyun/bin'
     }
-    from('zhiqingyun/conf') {
-        into 'zhiqingyun/conf'
+    from('zhishuyun/conf') {
+        into 'zhishuyun/conf'
     }
     from(rootDir.getAbsolutePath() + '/camunda-yun-backend/camunda-yun-main/src/main/resources/application-local.yml') {
-        into 'zhiqingyun/conf'
+        into 'zhishuyun/conf'
     }
     from(rootDir.getAbsolutePath() + '/resources/jdbc/system') {
-        into 'zhiqingyun/resources/jdbc/system'
+        into 'zhishuyun/resources/jdbc/system'
     }
-    from(rootDir.getAbsolutePath() + '/camunda-yun-backend/camunda-yun-main/build/libs/zhiqingyun.jar') {
-        into 'zhiqingyun/lib'
+    from(rootDir.getAbsolutePath() + '/camunda-yun-backend/camunda-yun-main/build/libs/zhishuyun.jar') {
+        into 'zhishuyun/lib'
     }
     from(rootDir.getAbsolutePath() + '/README.md') {
-        into 'zhiqingyun/'
+        into 'zhishuyun/'
     }
 }
 
 // 打包
 tasks.register('make', GradleBuild) {
 
-    tasks = [":camunda-yun-frontend:make", "build_agent", ":camunda-yun-backend:make", "build_zhiqingyun"]
+    tasks = [":camunda-yun-frontend:make", "build_agent", ":camunda-yun-backend:make", "build_zhishuyun"]
 }
 
 // 添加依赖

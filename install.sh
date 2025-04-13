@@ -33,7 +33,7 @@ cd "${BASE_PATH}" || exit
 # 创建tmp目录
 TMP_DIR="${BASE_PATH}"/resources/tmp
 SPARK_MIN_FILE=spark-3.4.1-bin-hadoop3.tgz
-OSS_DOWNLOAD_URL=https://isxcode.oss-cn-shanghai.aliyuncs.com/zhiqingyun/install
+OSS_DOWNLOAD_URL=https://isxcode.oss-cn-shanghai.aliyuncs.com/zhishuyun/install
 SPARK_MIN_DOWNLOAD_URL="${OSS_DOWNLOAD_URL}"/"${SPARK_MIN_FILE}"
 SPARK_MIN_DIR="${BASE_PATH}"/camunda-yun-dist/spark-min
 

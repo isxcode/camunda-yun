@@ -104,9 +104,9 @@ tasks.register('package', GradleBuild) {
 tasks.register('start', Exec) {
 
     commandLine 'sh', '-c', '''
-      rm -rf camunda-yun-dist/build/distributions/zhiqingyun
-      tar -vzxf camunda-yun-dist/build/distributions/zhiqingyun.tar.gz -C camunda-yun-dist/build/distributions/
-      cd camunda-yun-dist/build/distributions/zhiqingyun/bin
+      rm -rf camunda-yun-dist/build/distributions/zhishuyun
+      tar -vzxf camunda-yun-dist/build/distributions/zhishuyun.tar.gz -C camunda-yun-dist/build/distributions/
+      cd camunda-yun-dist/build/distributions/zhishuyun/bin
       bash start.sh
     '''
 }
@@ -115,7 +115,7 @@ tasks.register('docker', Exec) {
 
     commandLine 'sh', '-c', '''
       docker buildx uninstall
-      docker build -t isxcode/zhiqingyun:''' + version_number + ''' -f ./Dockerfile .
+      docker build -t isxcode/zhishuyun:''' + version_number + ''' -f ./Dockerfile .
      '''
 }
 

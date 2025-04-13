@@ -12,7 +12,7 @@ dependencies {
 }
 
 bootJar {
-    archiveFileName = 'zhiqingyun.jar'
+    archiveFileName = 'zhishuyun.jar'
 }
 
 bootRun {

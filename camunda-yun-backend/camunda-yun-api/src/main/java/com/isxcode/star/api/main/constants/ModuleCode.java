@@ -46,7 +46,7 @@ public interface ModuleCode {
     String TENANT_USER = "tenant-user";
 
     /**
-     * 至轻云代理模块
+     * 至数云代理模块
      */
     String SPARK_YUN_AGENT = "camunda-yun-agent";
 

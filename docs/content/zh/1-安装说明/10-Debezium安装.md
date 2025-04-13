@@ -9,10 +9,10 @@ title: "Debezium安装"
 > 需要资源邮箱咨询
 
 ```bash
-scp /Users/ispong/OneDrive/Downloads/docker/debezium-kafka-3.0.0.Final-amd64.tar zhiqingyun@39.100.75.11:/tmp
-scp /Users/ispong/OneDrive/Downloads/docker/debezium-connect-3.0.0.Final-amd64.tar zhiqingyun@39.100.75.11:/tmp
-scp /Users/ispong/OneDrive/Downloads/docker/debezium-ui-2.1.2.Final-amd64.tar zhiqingyun@39.100.75.11:/tmp
-scp /Users/ispong/OneDrive/Downloads/docker/debezium-zookeeper-3.0.0.Final-amd64.tar zhiqingyun@39.100.75.11:/tmp
+scp /Users/ispong/OneDrive/Downloads/docker/debezium-kafka-3.0.0.Final-amd64.tar zhishuyun@39.100.75.11:/tmp
+scp /Users/ispong/OneDrive/Downloads/docker/debezium-connect-3.0.0.Final-amd64.tar zhishuyun@39.100.75.11:/tmp
+scp /Users/ispong/OneDrive/Downloads/docker/debezium-ui-2.1.2.Final-amd64.tar zhishuyun@39.100.75.11:/tmp
+scp /Users/ispong/OneDrive/Downloads/docker/debezium-zookeeper-3.0.0.Final-amd64.tar zhishuyun@39.100.75.11:/tmp
 
 # 上传本地镜像
 docker load -i /tmp/debezium-kafka-3.0.0.Final-amd64.tar
