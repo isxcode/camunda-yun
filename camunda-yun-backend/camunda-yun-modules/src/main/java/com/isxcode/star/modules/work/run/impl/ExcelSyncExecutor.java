@@ -293,11 +293,11 @@ public class ExcelSyncExecutor extends WorkExecutor {
         // 上传csv文件
         try {
             scpJar(scpFileEngineNodeDto, csvFilePath,
-                engineNode.getAgentHomePath() + "/zhiqingyun-agent/file/" + csvFileName);
+                engineNode.getAgentHomePath() + "/zhishuyun-agent/file/" + csvFileName);
             // 删除本地的csv文件
             FileUtil.del(csvFilePath);
-            pluginReq.setCsvFilePath(engineNode.getAgentHomePath() + File.separator + "zhiqingyun-agent"
-                + File.separator + "file" + File.separator + csvFileName);
+            pluginReq.setCsvFilePath(engineNode.getAgentHomePath() + File.separator + "zhishuyun-agent" + File.separator
+                + "file" + File.separator + csvFileName);
             pluginReq.setCsvFileName(csvFileName);
         } catch (JSchException | SftpException | InterruptedException | IOException ex) {
             FileUtil.del(csvFilePath);
@@ -312,7 +312,7 @@ public class ExcelSyncExecutor extends WorkExecutor {
             allFunc.forEach(e -> {
                 try {
                     scpJar(scpFileEngineNodeDto, fileDir + File.separator + e.getFileId(),
-                        engineNode.getAgentHomePath() + "/zhiqingyun-agent/file/" + e.getFileId() + ".jar");
+                        engineNode.getAgentHomePath() + "/zhishuyun-agent/file/" + e.getFileId() + ".jar");
                 } catch (JSchException | SftpException | InterruptedException | IOException ex) {
                     throw new WorkRunException(LocalDateTime.now() + WorkLog.ERROR_INFO
                         + " : 自定义函数jar文件上传失败，请检查文件是否上传或者重新上传" + ex.getMessage() + "\n");
@@ -328,7 +328,7 @@ public class ExcelSyncExecutor extends WorkExecutor {
             libFile.forEach(e -> {
                 try {
                     scpJar(scpFileEngineNodeDto, fileDir + File.separator + e.getId(),
-                        engineNode.getAgentHomePath() + "/zhiqingyun-agent/file/" + e.getId() + ".jar");
+                        engineNode.getAgentHomePath() + "/zhishuyun-agent/file/" + e.getId() + ".jar");
                 } catch (JSchException | SftpException | InterruptedException | IOException ex) {
                     throw new WorkRunException(
                         LocalDateTime.now() + WorkLog.ERROR_INFO + "自定义依赖jar文件上传失败，请检查文件是否上传或者重新上传\n");

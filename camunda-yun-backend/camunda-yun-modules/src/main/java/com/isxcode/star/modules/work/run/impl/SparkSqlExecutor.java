@@ -231,7 +231,7 @@ public class SparkSqlExecutor extends WorkExecutor {
             allFunc.forEach(e -> {
                 try {
                     scpJar(scpFileEngineNodeDto, fileDir + File.separator + e.getFileId(),
-                        engineNode.getAgentHomePath() + "/zhiqingyun-agent/file/" + e.getFileId() + ".jar");
+                        engineNode.getAgentHomePath() + "/zhishuyun-agent/file/" + e.getFileId() + ".jar");
                 } catch (JSchException | SftpException | InterruptedException | IOException ex) {
                     log.error(ex.getMessage(), ex);
                     throw new WorkRunException(
@@ -248,7 +248,7 @@ public class SparkSqlExecutor extends WorkExecutor {
             libFile.forEach(e -> {
                 try {
                     scpJar(scpFileEngineNodeDto, fileDir + File.separator + e.getId(),
-                        engineNode.getAgentHomePath() + "/zhiqingyun-agent/file/" + e.getId() + ".jar");
+                        engineNode.getAgentHomePath() + "/zhishuyun-agent/file/" + e.getId() + ".jar");
                 } catch (JSchException | SftpException | InterruptedException | IOException ex) {
                     log.error(ex.getMessage(), ex);
                     throw new WorkRunException(

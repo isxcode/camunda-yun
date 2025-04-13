@@ -24,7 +24,7 @@
             :value="data"
           />
           <template #empty>
-            <p><a href="https://zhiqingyun.isxcode.com" style="color: #e25a1b">点击跳转官网</a></p>
+            <p><a href="https://zhishuyun.isxcode.com" style="color: #e25a1b">点击跳转官网</a></p>
           </template>
         </ContentRenderer>
       </div>
@@ -55,8 +55,8 @@ definePageMeta({
 
 const currentDoc = ref<NavItem | null>(null);
 useHead({
-  // title: "至轻云" + currentDoc.value?.title,
-  title: "至轻云",
+  // title: "至数云" + currentDoc.value?.title,
+  title: "至数云",
 });
 
 const { params } = useRoute();

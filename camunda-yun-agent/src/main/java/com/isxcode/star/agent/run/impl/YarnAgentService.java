@@ -58,13 +58,13 @@ public class YarnAgentService implements AgentService {
                     + submitWorkReq.getSparkSubmit().getAppResource());
         } else if (WorkType.PY_SPARK.equals(submitWorkReq.getWorkType())) {
             sparkLauncher
-                .setAppName("zhiqingyun-" + submitWorkReq.getWorkType() + "-" + submitWorkReq.getWorkId() + "-"
+                .setAppName("zhishuyun-" + submitWorkReq.getWorkType() + "-" + submitWorkReq.getWorkId() + "-"
                     + submitWorkReq.getWorkInstanceId())
                 .setAppResource(submitWorkReq.getAgentHomePath() + File.separator + "works" + File.separator
                     + submitWorkReq.getWorkInstanceId() + ".py");
         } else {
             sparkLauncher
-                .setAppName("zhiqingyun-" + submitWorkReq.getWorkType() + "-" + submitWorkReq.getWorkId() + "-"
+                .setAppName("zhishuyun-" + submitWorkReq.getWorkType() + "-" + submitWorkReq.getWorkId() + "-"
                     + submitWorkReq.getWorkInstanceId())
                 .setAppResource(submitWorkReq.getAgentHomePath() + File.separator + "plugins" + File.separator
                     + submitWorkReq.getSparkSubmit().getAppResource());
@@ -75,7 +75,7 @@ public class YarnAgentService implements AgentService {
             if (jarFiles != null) {
                 for (File jar : jarFiles) {
                     try {
-                        if (jar.getName().contains("hive") || jar.getName().contains("zhiqingyun-agent.jar")) {
+                        if (jar.getName().contains("hive") || jar.getName().contains("zhishuyun-agent.jar")) {
                             continue;
                         }
                         sparkLauncher.addJar(jar.toURI().toURL().toString());

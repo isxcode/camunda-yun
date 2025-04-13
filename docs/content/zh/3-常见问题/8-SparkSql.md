@@ -222,7 +222,7 @@ Exception in thread "main" java.lang.NoSuchMethodError: org.apache.spark.network
 #### 问题5: Caused by: org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.security.AccessControlException)
 
 ```log
-Caused by: org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.security.AccessControlException): Permission denied: user=185, access=EXECUTE, inode="/tmp":zhiqingyun:supergroup:drwxrwx---
+Caused by: org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.security.AccessControlException): Permission denied: user=185, access=EXECUTE, inode="/tmp":zhishuyun:supergroup:drwxrwx---
 	at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.check(FSPermissionChecker.java:506)
 	at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkTraverse(FSPermissionChecker.java:422)
 	at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkPermission(FSPermissionChecker.java:333)
@@ -337,7 +337,7 @@ ErrImagePull (failed to pull and unpack image "docker.io/library/spark:3.4.1": f
 
 ```log
 2025-01-15T18:27:01.483 INFO  : 运行状态:ErrImagePull
-2025-01-15T18:27:01.606 ERROR : 获取作业日志异常 : Error from server (BadRequest): container "spark-kubernetes-driver" in pod "zhiqingyun-spark-sql-sy-1879475137556619264-sy-1879475180372074496-30559f94697ff27b-driver" is waiting to start: image can't be pulled
+2025-01-15T18:27:01.606 ERROR : 获取作业日志异常 : Error from server (BadRequest): container "spark-kubernetes-driver" in pod "zhishuyun-spark-sql-sy-1879475137556619264-sy-1879475180372074496-30559f94697ff27b-driver" is waiting to start: image can't be pulled
 ```
 
 ##### 解决方案
