@@ -1,0 +1,154 @@
+plugins {
+    id 'java'
+    id 'checkstyle'
+    id 'org.springframework.boot' version "${SPRING_VERSION}"
+    id 'io.spring.dependency-management' version "${SPRING_MANAGER_VERSION}"
+    id "com.diffplug.spotless" version "${SPOTLESS_VERSION}"
+}
+
+def version_number = new File(rootDir.getAbsolutePath(), 'camunda-yun-backend/camunda-yun-main/src/main/resources/VERSION').readLines()[0].trim()
+
+allprojects {
+
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'java-library'
+    apply plugin: 'checkstyle'
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    group = 'com.isxcode.bpm'
+    version = version_number
+
+    repositories {
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+        mavenLocal()
+        mavenCentral()
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+
+    configurations.configureEach {
+        exclude group: "org.apache.logging.log4j", module: "log4j-slf4j-impl"
+        exclude group: "org.slf4j", module: "slf4j-reload4j"
+    }
+
+    dependencies {
+
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+
+        implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+        implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+        annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+        implementation "org.springdoc:springdoc-openapi-ui:${OPENAPI_VERSION}"
+
+        compileOnly "org.projectlombok:lombok:${LOMBOK_VERSION}"
+        annotationProcessor "org.projectlombok:lombok:${LOMBOK_VERSION}"
+
+        implementation "com.alibaba:fastjson:${FASTJSON_VERSION}"
+
+        implementation "org.junit.jupiter:junit-jupiter:${JUPITER_VERSION}"
+        testImplementation "org.junit.jupiter:junit-jupiter-api:${JUPITER_VERSION}"
+
+        implementation "org.mapstruct:mapstruct:${MAPSTRUCT_VERSION}"
+        implementation "org.mapstruct:mapstruct-processor:${MAPSTRUCT_VERSION}"
+        annotationProcessor "org.mapstruct:mapstruct-processor:${MAPSTRUCT_VERSION}"
+        testAnnotationProcessor "org.mapstruct:mapstruct-processor:${MAPSTRUCT_VERSION}"
+    }
+
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
+    tasks.withType(Checkstyle).configureEach {
+        maxWarnings = 100
+        maxErrors = 0
+        ignoreFailures = false
+        config resources.text.fromFile(rootDir.getAbsolutePath() + '/.checkstyle/checkstyle.xml')
+        reports {
+            xml.required = false
+            html.required = true
+            html.stylesheet resources.text.fromFile(rootDir.getAbsolutePath() + '/.checkstyle/checkstyle-simple.xsl')
+        }
+    }
+}
+
+spotless {
+    java {
+        target '*/**/*.java'
+        targetExclude('*/build/**/*.java')
+        targetExclude('flink-yun-dist/**/*.java')
+        eclipse().configFile(rootDir.getAbsolutePath() + '/.spotless/eclipse-java-google-style.xml')
+        removeUnusedImports()
+    }
+}
+
+tasks.register('format', GradleBuild) {
+
+    tasks = [":spotlessApply", ":checkstyleMain"]
+}
+
+tasks.register('package', GradleBuild) {
+
+    tasks = [":camunda-yun-dist:make"]
+}
+
+tasks.register('start', Exec) {
+
+    commandLine 'sh', '-c', '''
+      rm -rf camunda-yun-dist/build/distributions/zhiqingyun
+      tar -vzxf camunda-yun-dist/build/distributions/zhiqingyun.tar.gz -C camunda-yun-dist/build/distributions/
+      cd camunda-yun-dist/build/distributions/zhiqingyun/bin
+      bash start.sh
+    '''
+}
+
+tasks.register('docker', Exec) {
+
+    commandLine 'sh', '-c', '''
+      docker buildx uninstall
+      docker build -t isxcode/zhiqingyun:''' + version_number + ''' -f ./Dockerfile .
+     '''
+}
+
+tasks.register('website', Exec) {
+
+    commandLine 'sh', '-c', '''
+      cd docs
+      rm -rf node_modules
+      pnpm install --force
+      pnpm run dev
+     '''
+}
+
+tasks.register('frontend', Exec) {
+
+    commandLine 'sh', '-c', '''
+      cd camunda-yun-frontend
+      rm -rf node_modules
+      pnpm install --force
+      pnpm run dev --host
+    '''
+}
+
+tasks.register('backend', GradleBuild) {
+
+    tasks = [":camunda-yun-backend:camunda-yun-main:bootRun"]
+}
+
+tasks.register('autotest', GradleBuild) {
+
+    tasks = [":camunda-yun-autotest:autotest"]
+}
+
+tasks.register('install', Exec) {
+    commandLine 'sh', '-c', 'bash install.sh'
+}

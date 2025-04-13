@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "SparkYunAgentApplication",
+      "request": "launch",
+      "mainClass": "com.isxcode.star.agent.SparkYunAgentApplication",
+      "projectName": "camunda-yun-agent"
+    },
+    {
+      "type": "java",
+      "name": "SparkYunApplication",
+      "request": "launch",
+      "mainClass": "com.isxcode.star.SparkYunApplication",
+      "projectName": "camunda-yun-main",
+      "cwd": "/workspace/camunda-yun/camunda-yun-backend"
+    }
+  ]
+}
