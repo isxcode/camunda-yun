@@ -97,9 +97,6 @@ tasks.register('build_zhishuyun', Tar) {
     from(rootDir.getAbsolutePath() + '/camunda-yun-backend/camunda-yun-main/src/main/resources/application-local.yml') {
         into 'zhishuyun/conf'
     }
-    from(rootDir.getAbsolutePath() + '/resources/jdbc/system') {
-        into 'zhishuyun/resources/jdbc/system'
-    }
     from(rootDir.getAbsolutePath() + '/camunda-yun-backend/camunda-yun-main/build/libs/zhishuyun.jar') {
         into 'zhishuyun/lib'
     }
