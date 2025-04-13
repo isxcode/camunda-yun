@@ -14,11 +14,11 @@ title: "CDH安装"
 > 需要资源邮箱咨询
 
 ```bash
-scp -r /Users/ispong/OneDrive/Downloads/linux/cdh/cdh.zip zhiqingyun@39.100.75.11:/tmp
+scp -r /Users/ispong/OneDrive/Downloads/linux/cdh/cdh.zip zhishuyun@39.100.75.11:/tmp
 cd /tmp
 unzip cdh.zip
 
-scp -r /Users/ispong/OneDrive/Downloads/docker/cdh-httpd-1.0-amd64.tar zhiqingyun@39.100.75.11:/tmp
+scp -r /Users/ispong/OneDrive/Downloads/docker/cdh-httpd-1.0-amd64.tar zhishuyun@39.100.75.11:/tmp
 cd /tmp 
 docker -i cdh-httpd-1.0-amd64.tar
 ```
@@ -103,7 +103,7 @@ CREATE DATABASE cdh_monitor DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_gene
 # 使用root执行
 sudo su 
 /opt/cloudera/cm/schema/scm_prepare_database.sh -h isxcode -P 30002 mysql cdh_scm root Mysql123..
-sudo su zhiqingyun
+sudo su zhishuyun
 ```
 
 #### 安装httpd
@@ -283,7 +283,7 @@ source /etc/profile
 
 ```bash
 groupadd supergroup
-usermod -a -G supergroup zhiqingyun
+usermod -a -G supergroup zhishuyun
 newgrp supergroup
 ```
 
@@ -291,7 +291,7 @@ newgrp supergroup
 
 url: jdbc:hive2://39.100.75.11:10000    
 hive.metastore.uris: thrift://172.16.215.84:9083     
-username: zhiqingyun  
+username: zhishuyun  
 password: <空>  
 
 ![20250116144024](https://img.isxcode.com/picgo/20250116144024.png)

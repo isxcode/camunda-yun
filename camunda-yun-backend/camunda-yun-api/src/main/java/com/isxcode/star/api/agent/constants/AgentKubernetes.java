@@ -7,9 +7,9 @@ public interface AgentKubernetes {
 
     String SPARK_DOCKER_IMAGE = "spark:3.4.1";
 
-    String NAMESPACE = "zhiqingyun-space";
+    String NAMESPACE = "zhishuyun-space";
 
-    String SERVICE_ACCOUNT_NAME = "zhiqingyun";
+    String SERVICE_ACCOUNT_NAME = "zhishuyun";
 
     String PULL_POLICY = "IfNotPresent";
 }

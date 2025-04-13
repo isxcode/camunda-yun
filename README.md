@@ -1,8 +1,8 @@
-# 至轻云
+# 至数云
 
 ### 超轻量级大数据计算平台/数据中台
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/isxcode/zhiqingyun)](https://hub.docker.com/r/isxcode/zhiqingyun)
+[![Docker Pulls](https://img.shields.io/docker/pulls/isxcode/zhishuyun)](https://hub.docker.com/r/isxcode/zhishuyun)
 [![build](https://github.com/isxcode/camunda-yun/actions/workflows/build-app.yml/badge.svg?branch=main)](https://github.com/isxcode/camunda-yun/actions/workflows/build-app.yml)
 [![GitHub Repo stars](https://img.shields.io/github/stars/isxcode/camunda-yun)](https://github.com/isxcode/camunda-yun)
 [![GitHub forks](https://img.shields.io/github/forks/isxcode/camunda-yun)](https://github.com/isxcode/camunda-yun/fork)
@@ -11,19 +11,19 @@
 
 |           |                                                                           |
 |-----------|---------------------------------------------------------------------------|
-| 官网地址:     | https://zhiqingyun.isxcode.com                                            |
+| 官网地址:     | https://zhishuyun.isxcode.com                                            |
 | 源码地址:     | https://github.com/isxcode/camunda-yun                                      |
-| 演示环境:     | https://zhiqingyun-demo.isxcode.com                                       |
-| 安装包下载:    | https://isxcode.oss-cn-shanghai.aliyuncs.com/zhiqingyun/zhiqingyun.tar.gz |
-| 许可证下载:    | https://isxcode.oss-cn-shanghai.aliyuncs.com/zhiqingyun/license.lic       |
-| docker镜像: | https://hub.docker.com/r/isxcode/zhiqingyun                               |
-| 阿里云镜像:    | https://zhiqingyun.isxcode.com/zh/docs/zh/1/1-docker                      |
+| 演示环境:     | https://zhishuyun-demo.isxcode.com                                       |
+| 安装包下载:    | https://isxcode.oss-cn-shanghai.aliyuncs.com/zhishuyun/zhishuyun.tar.gz |
+| 许可证下载:    | https://isxcode.oss-cn-shanghai.aliyuncs.com/zhishuyun/license.lic       |
+| docker镜像: | https://hub.docker.com/r/isxcode/zhishuyun                               |
+| 阿里云镜像:    | https://zhishuyun.isxcode.com/zh/docs/zh/1/1-docker                      |
 | 关键词:      | 大数据平台, 数据中台, 数仓, 数据转换, 数据同步, Spark, Hadoop, Docker                        |
 |           |                                                                           |
 
 ### 产品介绍
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;至轻云是一款超轻量级、企业级大数据计算平台，基于Spark生态打造。一键部署，开箱即用。快速实现大数据离线ETL、Spark计算、实时计算、可视化调度、自定义接口、数据大屏以及自定义表单等多种功能，为企业提供高效便捷的大数据解决方案。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;至数云是一款超轻量级、企业级大数据计算平台，基于Spark生态打造。一键部署，开箱即用。快速实现大数据离线ETL、Spark计算、实时计算、可视化调度、自定义接口、数据大屏以及自定义表单等多种功能，为企业提供高效便捷的大数据解决方案。
 
 ### 功能特点
 
@@ -34,7 +34,7 @@
 ### 立即体验
 
 > [!TIP]
-> 演示地址：https://zhiqingyun-demo.isxcode.com </br>
+> 演示地址：https://zhishuyun-demo.isxcode.com </br>
 > 体验账号：user001 </br>
 > 账号密码：welcome1
 
@@ -46,14 +46,14 @@
 > 管理员密码：admin123
 
 ```bash
-docker run -p 8080:8080 -d isxcode/zhiqingyun
+docker run -p 8080:8080 -d isxcode/zhishuyun
 ```
 
 ### 相关文档
 
-- [快速入门](https://zhiqingyun.isxcode.com/zh/docs/zh/1/0)
-- [产品手册](https://zhiqingyun.isxcode.com/zh/docs/zh/2/0)
-- [开发手册](https://zhiqingyun.isxcode.com/zh/docs/zh/6/1)
+- [快速入门](https://zhishuyun.isxcode.com/zh/docs/zh/1/0)
+- [产品手册](https://zhishuyun.isxcode.com/zh/docs/zh/2/0)
+- [开发手册](https://zhishuyun.isxcode.com/zh/docs/zh/6/1)
 - [博客](https://ispong.isxcode.com/tags/spark/)
 
 ### 源码构建
@@ -66,7 +66,7 @@ docker run -p 8080:8080 -d isxcode/zhiqingyun
 ##### MacOS/Linux
 
 > [!IMPORTANT]
-> 安装包路径: camunda-yun/camunda-yun-dist/build/distributions/zhiqingyun.tar.gz
+> 安装包路径: camunda-yun/camunda-yun-dist/build/distributions/zhishuyun.tar.gz
 
 ```bash
 git clone https://github.com/isxcode/camunda-yun.git

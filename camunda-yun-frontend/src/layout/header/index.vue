@@ -9,7 +9,7 @@
 <template>
   <div class="zqy-header">
     <div class="header-name" @click="clickToSPK">
-      <img src="../../assets/imgs/logo-a.png" alt="至轻云">
+      <img src="../../assets/imgs/logo-a.png" alt="至数云">
     </div>
     <!-- <div
       v-if="headerConfig.tenantList && headerConfig.tenantList.length > 0 && tenantSelect"

@@ -101,13 +101,13 @@ public class StandaloneAgentService implements AgentService {
                     + submitWorkReq.getSparkSubmit().getAppResource());
         } else if (WorkType.PY_SPARK.equals(submitWorkReq.getWorkType())) {
             sparkLauncher
-                .setAppName("zhiqingyun-" + submitWorkReq.getWorkType() + "-" + submitWorkReq.getWorkId() + "-"
+                .setAppName("zhishuyun-" + submitWorkReq.getWorkType() + "-" + submitWorkReq.getWorkId() + "-"
                     + submitWorkReq.getWorkInstanceId())
                 .setAppResource(submitWorkReq.getAgentHomePath() + File.separator + "works" + File.separator
                     + submitWorkReq.getWorkInstanceId() + ".py");
         } else {
             sparkLauncher
-                .setAppName("zhiqingyun-" + submitWorkReq.getWorkType() + "-" + submitWorkReq.getWorkId() + "-"
+                .setAppName("zhishuyun-" + submitWorkReq.getWorkType() + "-" + submitWorkReq.getWorkId() + "-"
                     + submitWorkReq.getWorkInstanceId())
                 .setMaster(getMaster(submitWorkReq.getSparkHomePath())).setAppResource(submitWorkReq.getAgentHomePath()
                     + File.separator + "plugins" + File.separator + submitWorkReq.getSparkSubmit().getAppResource());
@@ -130,13 +130,13 @@ public class StandaloneAgentService implements AgentService {
                 submitWorkReq.getAgentHomePath() + File.separator + "file" + File.separator + e.getFileId() + ".jar"));
         }
 
-        // 添加至轻云的jar
+        // 添加至数云的jar
         if (!Strings.isEmpty(submitWorkReq.getAgentHomePath())) {
             File[] jarFiles = new File(submitWorkReq.getAgentHomePath() + File.separator + "lib").listFiles();
             if (jarFiles != null) {
                 for (File jar : jarFiles) {
                     try {
-                        if (!jar.getName().contains("hive") && !jar.getName().contains("zhiqingyun-agent.jar")) {
+                        if (!jar.getName().contains("hive") && !jar.getName().contains("zhishuyun-agent.jar")) {
                             sparkLauncher.addJar(jar.toURI().toURL().toString());
                         }
                     } catch (MalformedURLException e) {
@@ -375,7 +375,7 @@ public class StandaloneAgentService implements AgentService {
     public void stopWork(String submissionId, String sparkHomePath, String agentHomePath) throws Exception {
 
         if (Strings.isEmpty(sparkHomePath) || "null".equals(sparkHomePath)) {
-            sparkHomePath = agentHomePath + "/zhiqingyun-agent/spark-min";
+            sparkHomePath = agentHomePath + "/zhishuyun-agent/spark-min";
         }
 
         String url = getMasterWebUrl(sparkHomePath) + "/driver/kill/";

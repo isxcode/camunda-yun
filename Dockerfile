@@ -2,16 +2,15 @@ FROM openjdk:8
 
 RUN rm -rf /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
 
-VOLUME /etc/zhiqingyun/conf
-VOLUME /var/lib/zhiqingyun
+VOLUME /etc/zhishuyun/conf
+VOLUME /var/lib/zhishuyun
 
 ARG ADMIN_PASSWORD='admin123'
 ARG ACTIVE_ENV='docker'
 ARG LOG_LEVEL='info'
 
-COPY camunda-yun-backend/camunda-yun-main/build/libs/zhiqingyun.jar /opt/zhiqingyun/zhiqingyun.jar
-COPY camunda-yun-backend/camunda-yun-main/src/main/resources/application-docker.yml /etc/zhiqingyun/conf/
-COPY ./resources/jdbc/system /var/lib/zhiqingyun-system
+COPY camunda-yun-backend/camunda-yun-main/build/libs/zhishuyun.jar /opt/zhishuyun/zhishuyun.jar
+COPY camunda-yun-backend/camunda-yun-main/src/main/resources/application-docker.yml /etc/zhishuyun/conf/
 
 EXPOSE 8080
 
@@ -21,4 +20,4 @@ ENV LOG_LEVEL=${LOG_LEVEL}
 ENV PARAMS=""
 ENV JVMOPTIONS=""
 
-ENTRYPOINT ["sh","-c","java $JVMOPTIONS -jar /opt/zhiqingyun/zhiqingyun.jar --logging.level.root=${LOG_LEVEL} --spring.profiles.active=${ACTIVE_ENV} --isx-app.admin-passwd=${ADMIN_PASSWORD} --spring.config.additional-location=/etc/zhiqingyun/conf/ $PARAMS"]
+ENTRYPOINT ["sh","-c","java $JVMOPTIONS -jar /opt/zhishuyun/zhishuyun.jar --logging.level.root=${LOG_LEVEL} --spring.profiles.active=${ACTIVE_ENV} --isx-app.admin-passwd=${ADMIN_PASSWORD} --spring.config.additional-location=/etc/zhishuyun/conf/ $PARAMS"]

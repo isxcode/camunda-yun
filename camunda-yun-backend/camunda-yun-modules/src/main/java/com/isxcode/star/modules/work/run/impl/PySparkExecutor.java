@@ -173,7 +173,7 @@ public class PySparkExecutor extends WorkExecutor {
         try {
             // 上传脚本
             scpText(scpFileEngineNodeDto, script,
-                engineNode.getAgentHomePath() + "/zhiqingyun-agent/works/" + workInstance.getId() + ".py");
+                engineNode.getAgentHomePath() + "/zhishuyun-agent/works/" + workInstance.getId() + ".py");
 
             workInstance = updateInstance(workInstance, logBuilder);
         } catch (JSchException | SftpException | InterruptedException e) {
@@ -186,7 +186,7 @@ public class PySparkExecutor extends WorkExecutor {
 
         // 开始构造SparkSubmit
         SparkSubmit sparkSubmit = SparkSubmit.builder().verbose(true).mainClass("")
-            .appResource(engineNode.getAgentHomePath() + "/zhiqingyun-agent/works/" + workInstance.getId() + ".py")
+            .appResource(engineNode.getAgentHomePath() + "/zhishuyun-agent/works/" + workInstance.getId() + ".py")
             .conf(genSparkSubmitConfig(workRunContext.getClusterConfig().getSparkConfig())).build();
 
         // 开始构建作业

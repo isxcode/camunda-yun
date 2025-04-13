@@ -11,9 +11,9 @@ import io.swagger.v3.oas.models.security.SecurityScheme;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@OpenAPIDefinition(info = @Info(title = "至轻云", description = "企业级大数据计算平台"),
+@OpenAPIDefinition(info = @Info(title = "至数云", description = "企业级大数据计算平台"),
     servers = {@Server(url = "http://localhost:8080", description = "本地环境"),
-            @Server(url = "https://zhiqingyun-demo.isxcode.com", description = "远程环境")})
+            @Server(url = "https://zhishuyun-demo.isxcode.com", description = "远程环境")})
 @Configuration
 public class OpenApiConfig {
 
