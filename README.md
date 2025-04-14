@@ -1,6 +1,6 @@
 # 至数云
 
-### 超轻量级大数据计算平台/数据中台
+### 超轻量级低代码流程平台/数据中台
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/isxcode/zhishuyun)](https://hub.docker.com/r/isxcode/zhishuyun)
 [![build](https://github.com/isxcode/camunda-yun/actions/workflows/build-app.yml/badge.svg?branch=main)](https://github.com/isxcode/camunda-yun/actions/workflows/build-app.yml)

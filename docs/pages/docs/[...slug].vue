@@ -24,7 +24,7 @@
             :value="data"
           />
           <template #empty>
-            <p><a href="https://zhishuyun.isxcode.com" style="color: #e25a1b">点击跳转官网</a></p>
+            <p><a href="https://zhishuyun.isxcode.com" style="color: #009b8f">点击跳转官网</a></p>
           </template>
         </ContentRenderer>
       </div>
@@ -83,7 +83,7 @@ onMounted(async () => {
   mediumZoom(document.querySelectorAll(".image-zoom"), {
     margin: 100,
     scrollOffset: 1,
-    background: "#fffaf8",
+    background: "#f4faf9",
   });
 });
 

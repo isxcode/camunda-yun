@@ -15,9 +15,10 @@
       <div class="right">
         <div class="column">
           <div class="title">{{ $t("product") }}</div>
-          <div class="link" @click="clickzhishuyun">{{ $t("zhishuyun") }}</div>
+          <div class="link" @click="clickZhiqingyun">{{ $t("zhiqingyun") }}</div>
           <div class="link" @click="clickZhiliuyun">{{ $t("zhiliuyun") }}</div>
           <div class="link" @click="clickZhihuiyun">{{ $t("zhihuiyun") }}</div>
+          <div class="link" @click="clickZhishuyun">{{ $t("zhishuyun") }}</div>
         </div>
         <div class="column">
           <div class="title">{{ $t("community") }}</div>
@@ -195,7 +196,7 @@
     height: 50px;
     line-height: 50px;
     text-align: center;
-    background: #ffccb4;
+    background: #cfffff;
 
     .content {
       width: 130px;
@@ -211,7 +212,7 @@
       .phone-text {
         margin-left: 10px;
         font-size: 1.25rem;
-        color: #e25a1b;
+        color: #009b8f;
       }
     }
   }
@@ -329,7 +330,7 @@ const {locale} = useI18n();
 //   router.push({path: switchLocalePath(newLocale)});
 // }
 
-function clickzhishuyun() {
+function clickZhishuyun() {
   const router = useRouter();
   router.push("/");
 }
@@ -346,8 +347,8 @@ function clickZhihuiyun() {
   window.open("https://zhihuiyun.isxcode.com");
 }
 
-function clickZhishuyun() {
-  window.open("https://zhishuyun.isxcode.com");
+function clickZhiqingyun() {
+  window.open("https://zhiqinyun.isxcode.com");
 }
 
 function joinUs() {
