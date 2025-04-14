@@ -186,7 +186,7 @@ onMounted(async () => {
   mediumZoom(document.querySelectorAll('#zoom'), {
     margin: 100,
     scrollOffset: 1,
-    background: '#fffaf8',
+    background: '#f4faf9',
   })
 })
 
@@ -229,7 +229,7 @@ onMounted(() => {
     fullscreenWeb: true,
     pip: true,
     autoplay: false,
-    theme: '#e25a1b',
+    theme: '#009b8f',
     muted: true,
     autoSize: true
   });
@@ -288,11 +288,11 @@ $module-about-height: 460px;
 // 商业板块的高度
 $module-business-height: 550px;
 // 主题色
-$primary-color: #e25a1b;
+$primary-color: #009b8f;
 // 特点1背景色
 $module-feat-left-bg-color: white;
 // 特点2背景色
-$module-feat-right-bg-color: rgba(255, 156, 110, 5%);
+$module-feat-right-bg-color: rgba(0, 155, 143, 5%);
 // 特点高度
 $module-feat-height: 440px;
 // 结束板块高度
@@ -348,8 +348,8 @@ $module-intro-img-width: 600px;
           display: flex;
           margin-top: 20px;
           padding-left: 15px;
-          border: #e25a1b solid 1px;
-          color: #e25a1b;
+          border: #009b8f solid 1px;
+          color: #009b8f;
           width: 435px;
           border-radius: 3px;
           font-size: 17px;
@@ -373,7 +373,7 @@ $module-intro-img-width: 600px;
             cursor: pointer;
             width: 120px;
             border-radius: 3px;
-            background: #e25a1b;
+            background: #009b8f;
             color: white;
             text-align: center;
             font-size: 18px;
@@ -389,7 +389,7 @@ $module-intro-img-width: 600px;
             cursor: pointer;
             margin-left: 20px;
             width: 150px;
-            color: #e25a1b;
+            color: #009b8f;
             height: 40px;
             line-height: 40px;
             text-align: center;
@@ -558,7 +558,7 @@ $module-intro-img-width: 600px;
       .line-3 {
         cursor: pointer;
         margin-top: 35px;
-        color: #e25a1b;
+        color: #009b8f;
         font-family: "阿里妈妈数黑体 Bold", sans-serif;
       }
     }
@@ -610,7 +610,7 @@ $module-intro-img-width: 600px;
       .line-3 {
         cursor: pointer;
         margin-top: 35px;
-        color: #e25a1b;
+        color: #009b8f;
         font-family: "阿里妈妈数黑体 Bold", sans-serif;
       }
     }
@@ -641,7 +641,7 @@ $module-intro-img-width: 600px;
       cursor: pointer;
       margin: 40px auto auto;
       background: white;
-      color: #e25a1b;
+      color: #009b8f;
       width: 200px;
       font-size: 20px;
       border-radius: 3px;
@@ -713,7 +713,7 @@ $module-intro-img-width: 600px;
               cursor: pointer;
               width: 170px;
               border-radius: 3px;
-              background: #e25a1b;
+              background: #009b8f;
               color: white;
               text-align: center;
               font-size: 18px;
@@ -730,7 +730,7 @@ $module-intro-img-width: 600px;
               cursor: pointer;
               width: 150px;
               margin: auto;
-              background: #e25a1b;
+              background: #009b8f;
               color: white;
               height: 40px;
               line-height: 40px;
