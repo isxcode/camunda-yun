@@ -124,7 +124,7 @@ function initData() {
                 }
             }
             .draggable-type {
-                color: #f34c00;
+                color: #009b8f;
                 line-height: normal;
             }
             .draggable-name {
