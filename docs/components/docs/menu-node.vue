@@ -134,7 +134,7 @@ function computeClass(link: MenuItem) {
     &:hover {
       border-left: var(--sk-color-home-primary) 2px solid;
       color: var(--sk-color-home-primary);
-      background: #fffaf8;
+      background: rgba(0, 155, 143, .05);
     }
 
     .menu-item-icon {
