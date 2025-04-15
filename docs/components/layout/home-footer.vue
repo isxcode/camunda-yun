@@ -362,7 +362,7 @@ function aboutUs() {
 }
 
 function clickGithubProject() {
-  window.open("https://github.com/orgs/isxcode/projects/16");
+  window.open("https://github.com/orgs/isxcode/projects/26");
 }
 
 function clickGitee() {
@@ -402,7 +402,7 @@ function downloadPackage() {
 }
 
 function clickBlogs() {
-  window.open("https://ispong.isxcode.com/tags/spark/");
+  window.open("https://ispong.isxcode.com/tags/spring/");
 }
 
 function clickDocs() {
