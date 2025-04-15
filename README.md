@@ -54,7 +54,7 @@ docker run -p 8080:8080 -d isxcode/zhishuyun
 - [快速入门](https://zhishuyun.isxcode.com/zh/docs/zh/1/0)
 - [产品手册](https://zhishuyun.isxcode.com/zh/docs/zh/2/0)
 - [开发手册](https://zhishuyun.isxcode.com/zh/docs/zh/6/1)
-- [博客](https://ispong.isxcode.com/tags/spark/)
+- [博客](https://ispong.isxcode.com/tags/spring/)
 
 ### 源码构建
 
