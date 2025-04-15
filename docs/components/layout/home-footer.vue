@@ -362,7 +362,7 @@ function aboutUs() {
 }
 
 function clickGithubProject() {
-  window.open("https://github.com/orgs/isxcode/projects/16");
+  window.open("https://github.com/orgs/isxcode/projects/26");
 }
 
 function clickGitee() {
