@@ -23,13 +23,6 @@ export const menuListData: Array<Menu> = [
     authType: [ 'ROLE_TENANT_MEMBER', 'ROLE_TENANT_ADMIN' ],
     children: [
       {
-        code: 'computer-group',
-        name: '计算集群',
-        icon: 'UploadFilled',
-        authType: [ 'ROLE_TENANT_MEMBER', 'ROLE_TENANT_ADMIN' ],
-        childPage: ['computer-pointer']
-      },
-      {
         code: 'datasource',
         name: '数据源',
         icon: 'DataLine',
@@ -48,115 +41,6 @@ export const menuListData: Array<Menu> = [
         name: '资源中心',
         icon: 'Paperclip',
         authType: [ 'ROLE_TENANT_MEMBER', 'ROLE_TENANT_ADMIN' ],
-        childPage: []
-      }
-    ]
-  },
-  {
-    code: 'data-dev',
-    name: '数据开发',
-    icon: 'Wallet',
-    authType: [ 'ROLE_TENANT_MEMBER', 'ROLE_TENANT_ADMIN' ],
-    children: [
-      {
-        code: 'workflow',
-        name: '作业流',
-        icon: 'SetUp',
-        authType: [ 'ROLE_TENANT_MEMBER', 'ROLE_TENANT_ADMIN' ],
-        childPage: ['workflow-page']
-      },
-      {
-        code: 'custom-func',
-        name: '函数仓库',
-        icon: 'Mouse',
-        authType: [ 'ROLE_TENANT_MEMBER', 'ROLE_TENANT_ADMIN' ],
-        childPage: []
-      },
-      {
-        code: 'realtime-computing',
-        name: '实时计算',
-        icon: 'Iphone',
-        authType: [ 'ROLE_TENANT_MEMBER', 'ROLE_TENANT_ADMIN' ],
-        childPage: ['computing-detail']
-      },
-      {
-        code: 'spark-container',
-        name: '计算容器',
-        icon: 'Box',
-        authType: [ 'ROLE_TENANT_MEMBER', 'ROLE_TENANT_ADMIN' ],
-        childPage: []
-      }
-    ]
-  },
-  {
-    code: 'schedule-management',
-    name: '任务调度',
-    icon: 'ScaleToOriginal',
-    authType: [ 'ROLE_TENANT_MEMBER', 'ROLE_TENANT_ADMIN' ],
-    children: [
-      {
-        code: 'schedule',
-        name: '调度历史',
-        icon: 'DocumentRemove',
-        authType: [ 'ROLE_TENANT_MEMBER', 'ROLE_TENANT_ADMIN' ],
-        childPage: []
-      }
-    ]
-  },
-  {
-    code: 'message-management',
-    name: '基线告警',
-    icon: 'ChatDotRound',
-    authType: [ 'ROLE_TENANT_MEMBER', 'ROLE_TENANT_ADMIN' ],
-    children: [
-      {
-        code: 'message-notifications',
-        name: '消息体',
-        icon: 'Message',
-        authType: [ 'ROLE_TENANT_MEMBER', 'ROLE_TENANT_ADMIN' ],
-        childPage: []
-      },
-      {
-        code: 'warning-config',
-        name: '基线配置',
-        icon: 'TakeawayBox',
-        authType: [ 'ROLE_TENANT_MEMBER', 'ROLE_TENANT_ADMIN' ],
-        childPage: []
-      },
-      {
-        code: 'warning-schedule',
-        name: '告警实例',
-        icon: 'List',
-        authType: [ 'ROLE_TENANT_MEMBER', 'ROLE_TENANT_ADMIN' ],
-        childPage: []
-      }
-    ]
-  },
-  {
-    code: 'metadata-page',
-    name: '元数据',
-    icon: 'Coin',
-    authType: ['ROLE_TENANT_MEMBER', 'ROLE_TENANT_ADMIN'],
-    children: [
-      {
-        code: 'metadata-management',
-        name: '数据地图',
-        icon: 'Connection',
-        authType: ['ROLE_TENANT_MEMBER', 'ROLE_TENANT_ADMIN'],
-        childPage: []
-      },
-      {
-        code: 'acquisition-task',
-        name: '数据采集',
-        icon: 'Collection',
-        authType: ['ROLE_TENANT_MEMBER', 'ROLE_TENANT_ADMIN'],
-        childPage: []
-      },
-      {
-        code: 'acquisition-instance',
-        name: '采集实例',
-        icon: 'List',
-        authType: ['ROLE_TENANT_MEMBER', 'ROLE_TENANT_ADMIN'],
         childPage: []
       }
     ]
