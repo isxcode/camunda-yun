@@ -85,7 +85,3 @@ git clone https://github.com/isxcode/camunda-yun.git
 cd camunda-yun
 ./gradlew.bat install clean package
 ```
-
-### 收藏历史
-
-[![Star History Chart](https://api.star-history.com/svg?repos=isxcode/camunda-yun&type=Date)](https://www.star-history.com/#isxcode/camunda-yun&Date)
