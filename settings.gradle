@@ -2,7 +2,6 @@ rootProject.name = 'camunda-yun'
 
 include 'camunda-yun-agent'
 include 'camunda-yun-dist'
-include 'camunda-yun-autotest'
 include 'camunda-yun-frontend'
 include 'camunda-yun-backend'
 include 'camunda-yun-backend:camunda-yun-main'
