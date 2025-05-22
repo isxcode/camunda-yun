@@ -17,7 +17,7 @@
 | 安装包下载:      | https://isxcode.oss-cn-shanghai.aliyuncs.com/zhishuyun/zhishuyun.tar.gz                                                                                 |
 | 许可证下载:      | https://isxcode.oss-cn-shanghai.aliyuncs.com/zhishuyun/license.lic                                                                                      |
 | Docker Hub: | https://hub.docker.com/r/isxcode/zhishuyun                                                                                                              |
-| 产品矩阵:       | [至轻云](https://zhiqingyun.isxcode.com), [至流云](https://zhishuyun.isxcode.com), [至慧云](https://zhihuiyun.isxcode.com), [至数云](https://zhishuyun.isxcode.com) |
+| 产品矩阵:       | [至轻云](https://zhiqingyun.isxcode.com), [至流云](https://zhiliuyun.isxcode.com), [至慧云](https://zhihuiyun.isxcode.com), [至数云](https://zhishuyun.isxcode.com) |
 | 关键词:        | 低代码平台, 表单分享, 应用搭建, 云原生, Camunda, Docker, Rancher                                                                                                        |
 |             |                                                                                                                                                         |
 
